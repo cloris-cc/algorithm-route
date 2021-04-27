@@ -1,6 +1,6 @@
 package cn.teamwang.algorithm.tree;
 
-import java.util.Stack;
+import java.util.*;
 
 /**
  * 3 种遍历
@@ -22,7 +22,7 @@ public class Order {
     }
 
     /**
-     * 中序遍历: list为升序
+     * 中序遍历: 二叉搜索树list为有序(升序)
      */
     public void inorder(TreeNode root) {
         if (root != null) {
@@ -33,7 +33,9 @@ public class Order {
 
     }
 
-    //2.2迭代和栈实现
+    /**
+     * 迭代和栈实现
+     */
     public void inorder2(TreeNode root) {
         Stack<TreeNode> stack = new Stack<>();
         while (root != null || !stack.empty()) {
@@ -47,6 +49,9 @@ public class Order {
         }
     }
 
+    /**
+     * 后序遍历
+     */
     public void backorder(TreeNode root) {
         if (root != null) {
             backorder(root.left);
@@ -54,4 +59,31 @@ public class Order {
             System.out.println(root.val);
         }
     }
+
+    /**
+     * 层次遍历：
+     * 1. 使用BFS(Breadth First Search)算法(队列)
+     * 2.
+     */
+    public List<Integer> bfs(TreeNode root) {
+        List<Integer> list = new ArrayList<>();
+        Queue<TreeNode> q = new LinkedList<>();
+
+        // similar to add()
+        q.offer(root); // 第一层
+        while (!q.isEmpty()) {
+            // similar to remove()
+            TreeNode node = q.poll();
+            // business code
+            list.add(node.val); // 第一层
+            if (node.left != null) {
+                q.offer(node.left); // 下一层
+            }
+            if (node.right != null) {
+                q.offer(node.right); // 下一层
+            }
+        }
+        return list;
+    }
+
 }
