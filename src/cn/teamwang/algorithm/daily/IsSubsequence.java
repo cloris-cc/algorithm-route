@@ -10,7 +10,7 @@ import java.util.Queue;
  */
 public class IsSubsequence {
     // todo 再增加判断连续子序列的题目
-    // todo 优化代码
+    // todo 优化代码，使用双指针/dp
     public static void main(String[] args) {
         String s1 = "abc";
         String t1 = "ahbgdc";
