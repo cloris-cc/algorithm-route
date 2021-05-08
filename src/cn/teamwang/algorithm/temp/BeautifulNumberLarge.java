@@ -19,7 +19,7 @@ public class BeautifulNumberLarge {
     /**
      * n --> r进制 --> 111...1(k个1)
      * 即 N = r^(k-1) + r^(k-2) + ... + r + 1，由于k为指数故k的数字不可能很大。k的范围2~64
-     * todo：二分查找时间复杂度
+     * 二分查找时间复杂度 logN
      */
     private static int beautiful(int n) {
         int minR = 2;
