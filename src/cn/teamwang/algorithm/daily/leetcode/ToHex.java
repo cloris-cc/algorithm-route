@@ -1,4 +1,4 @@
-package cn.teamwang.algorithm.daily;
+package cn.teamwang.algorithm.daily.leetcode;
 
 import java.util.HashMap;
 import java.util.Map;

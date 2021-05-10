@@ -1,4 +1,4 @@
-package cn.teamwang.algorithm.daily;
+package cn.teamwang.algorithm.daily.leetcode;
 
 /**
  * todo 198. 打家劫舍

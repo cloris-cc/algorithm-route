@@ -1,4 +1,4 @@
-package cn.teamwang.algorithm.daily;
+package cn.teamwang.algorithm.daily.leetcode;
 
 /**
  * 1486. 数组异或操作

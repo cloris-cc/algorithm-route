@@ -1,4 +1,4 @@
-package cn.teamwang.algorithm.daily;
+package cn.teamwang.algorithm.daily.leetcode;
 
 /**
  * 551. 学生出勤记录 I
