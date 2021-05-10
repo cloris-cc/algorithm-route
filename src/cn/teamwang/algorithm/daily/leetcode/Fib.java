@@ -26,11 +26,11 @@ public class Fib {
     }
 
     public static int fib2(int n) {
-        if (n== 0 || n==1) {
+        if (n == 0 || n == 1) {
             return n;
         }
         // 根据提示：0 <= n <= 100
-        int[] nums = new int[n+1];
+        int[] nums = new int[n + 1];
         nums[0] = 0;
         nums[1] = 1;
 
@@ -38,5 +38,22 @@ public class Fib {
             nums[i] = (nums[i - 1] + nums[i - 2]) % 1000000007;
         }
         return nums[n];
+    }
+
+    /**
+     * 滚动数组
+     */
+    public static int fib3(int n) {
+        if (n == 0 || n == 1) {
+            return n;
+        }
+        int left = 0, middle = 0, right = 1;
+
+        for (int i = 2; i <= n; ++i) {
+            left = middle;
+            middle = right;
+            right = left + middle;
+        }
+        return right;
     }
 }
