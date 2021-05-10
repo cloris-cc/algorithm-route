@@ -1,4 +1,4 @@
-package cn.teamwang.algorithm.nowcoder;
+package cn.teamwang.algorithm.daily.nowcoder;
 
 import java.util.Scanner;
 
