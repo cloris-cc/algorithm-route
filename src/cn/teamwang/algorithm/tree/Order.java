@@ -61,8 +61,8 @@ public class Order {
     }
 
     /**
-     * 层次遍历：
-     * 1. 使用BFS(Breadth First Search)算法(队列)
+     * 层次遍历相关算法：
+     * 1. 使用BFS(Breadth First Search,广度优先搜索)算法(队列)
      * 2.
      */
     public List<Integer> bfs(TreeNode root) {
@@ -81,6 +81,27 @@ public class Order {
             }
             if (node.right != null) {
                 q.offer(node.right); // 下一层
+            }
+        }
+        return list;
+    }
+
+    /**
+     * 树3种遍历的基础算法：
+     * Depth First Search，深度优先搜索
+     * 可以用来搜索叶子节点(即没有左右节点的节点)
+     */
+    public List<Integer> dfs(TreeNode root) {
+        List<Integer> list = new ArrayList<>();
+
+        if (root.left == null && root.right == null) {
+            list.add(root.val);
+        } else {
+            if (root.left != null) {
+                dfs(root.left);
+            }
+            if (root.right != null) {
+                dfs(root.right);
             }
         }
         return list;
