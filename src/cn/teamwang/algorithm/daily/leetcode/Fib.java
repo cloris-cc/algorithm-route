@@ -17,6 +17,9 @@ public class Fib {
         System.out.println(fib2(95));
     }
 
+    /**
+     * 时间复杂度O(2^n)
+     */
     public static int fib1(int n) {
         if (n == 0 || n == 1) {
             return n;
@@ -25,6 +28,9 @@ public class Fib {
         }
     }
 
+    /**
+     * 空间复杂度O(n)
+     */
     public static int fib2(int n) {
         if (n == 0 || n == 1) {
             return n;
@@ -41,7 +47,7 @@ public class Fib {
     }
 
     /**
-     * 滚动数组
+     * 滚动数组，空间复杂度O(1)
      */
     public static int fib3(int n) {
         if (n == 0 || n == 1) {
