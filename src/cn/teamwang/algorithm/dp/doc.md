@@ -16,3 +16,7 @@ https://baike.baidu.com/item/状态转移方程/7359039?fr=aladdin
 
 - 线性数据的最优解/最大价值
 - 最短路径，最长公共子序列，最大价值
+
+## 典型例题
+
+1. [最长公共子序列](./LongestCommonSubsequence.java)
