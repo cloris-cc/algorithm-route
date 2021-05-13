@@ -44,10 +44,10 @@ public class NumWays {
                 dp[i][j] = dp[i - 1][j];
                 // 防止越界
                 if (j - 1 >= 0) {
-                    dp[i][j] = (dp[i][j] % mod + dp[i - 1][j - 1]) % mod;
+                    dp[i][j] = (dp[i][j] + dp[i - 1][j - 1]) % mod;
                 }
                 if (j + 1 <= far) {
-                    dp[i][j] = (dp[i][j] % mod + dp[i - 1][j + 1]) % mod;
+                    dp[i][j] = (dp[i][j] + dp[i - 1][j + 1]) % mod;
                 }
             }
         }
