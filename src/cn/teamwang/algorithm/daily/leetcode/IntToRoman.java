@@ -1,6 +1,11 @@
 package cn.teamwang.algorithm.daily.leetcode;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
+ * 12. 整数转罗马数字
+ *
  * @author <a href="mailto:clorisforcoding@gmail.com">Jacky Fang</a>
  */
 public class IntToRoman {
@@ -79,4 +84,42 @@ public class IntToRoman {
         return s.toString();
     }
 
+    /**
+     * 减
+     *
+     * 字符13        数值
+     * I             1
+     * IV            4
+     * V             5
+     * IX            9
+     * X             10
+     * XL            40
+     * L             50
+     * XC            90
+     * C             100
+     * CD            400
+     * D             500
+     * CM            900
+     * M             1000
+     */
+    public static String intToRoman2(int num) {
+        // 用map的话要手动put好多次
+        StringBuilder res = new StringBuilder();
+        String[] strs = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
+        int[] nums = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
+
+        for (int i = 0; i < strs.length; i++) {
+            String s = strs[i];
+            int n = nums[i];
+
+            while (num >= n) {
+                num -= n;
+                res.append(s);
+            }
+            if (num == 0) {
+                break;
+            }
+        }
+        return res.toString();
+    }
 }
