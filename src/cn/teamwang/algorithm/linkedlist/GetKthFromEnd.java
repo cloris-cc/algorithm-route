@@ -12,11 +12,11 @@ public class GetKthFromEnd {
         int[] nums = {1, 2, 3, 4, 5};
         ListNode head = Reverse.create(nums);
 
-        test(head, 2).print();
+        getKthFromEnd1(head, 2).print();
 
     }
 
-    public static ListNode test(ListNode head, int k) {
+    public static ListNode getKthFromEnd1(ListNode head, int k) {
         ListNode t = head;
         int count = 0;
 
@@ -31,5 +31,21 @@ public class GetKthFromEnd {
         }
 
         return t;
+    }
+
+    /**
+     * 双指针：让快指针先走 k 步，然后快慢指针开始同速前进。这样当快指针走到链表末尾 null 时，慢指针所在的位置就是倒数第 k 个链表节点
+     */
+    public static ListNode getKthFromEnd2(ListNode head, int k) {
+        ListNode slow, fast;
+        slow = fast = head;
+        while (k-- > 0)
+            fast = fast.next;
+
+        while (fast != null) {
+            slow = slow.next;
+            fast = fast.next;
+        }
+        return slow;
     }
 }
