@@ -53,7 +53,7 @@ public class Order {
      * 后序遍历
      */
     public void backorder(TreeNode root) {
-        if (root != null) {
+        if (root != null) { // 终止条件相当于 root==null return
             backorder(root.left);
             backorder(root.right);
             System.out.println(root.val);
@@ -87,6 +87,8 @@ public class Order {
     }
 
     /**
+     * DFS: 直到 null 停止
+     *
      * 树3种遍历的基础算法：
      * Depth First Search，深度优先搜索
      * 可以用来搜索叶子节点(即没有左右节点的节点)
@@ -94,6 +96,7 @@ public class Order {
     public List<Integer> dfs(TreeNode root) {
         List<Integer> list = new ArrayList<>();
 
+        // 同时处理了左右节点的情况。
         if (root.left == null && root.right == null) {
             list.add(root.val);
         } else {
