@@ -10,4 +10,12 @@ public class ListNode {
     public ListNode(int val) {
         this.val = val;
     }
+
+    public void print() {
+        System.out.print(this.val);
+        if (this.next !=null) {
+            System.out.print("-->");
+            this.next.print();
+        }
+    }
 }
