@@ -24,7 +24,7 @@ https://baike.baidu.com/item/状态转移方程/7359039?fr=aladdin
 > DP解题思路：
 > Step 1: 确定dp是几维数组。通过题目中可遍历的东西来看。dp[i][j]为...的ans/res(此处不是那个最优解)。
 > Step 2: 求初始值。从i=0, j=0...入手。
-> Step 3: 求状态转移方程。先从i-1, i+1, j-1, j+1...入手，不行再用变量替代(例如，当dp[i]为一维数组，状态转移方程也可以引入变量j)。
+> Step 3: 求状态转移方程。先从i+-1, j+-1...入手，不行再用变量替代(例如，当dp[i]为一维数组，状态转移方程也可以引入变量j)。
 
 1. [最长公共子序列](./LongestCommonSubsequence.java)
 2. [剪绳子I](./CuttingRope.java)
