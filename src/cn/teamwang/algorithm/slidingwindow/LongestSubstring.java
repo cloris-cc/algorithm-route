@@ -66,6 +66,7 @@ public class LongestSubstring {
         while (l < s.length() - 1 && r < s.length() - 1) {
             if (freq[s.charAt(r + 1)] == 0) {
                 // 没有重复，右边界滑动窗口
+                // 要根据索引删除list，因为big会有重复的数字。
                 r++;
                 freq[s.charAt(r)]++;
             } else {
