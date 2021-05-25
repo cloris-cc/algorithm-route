@@ -3,7 +3,8 @@ package cn.teamwang.algorithm.daily.leetcode;
 /**
  * 810. 黑板异或游戏
  * <p>
- * 结论：奇数长度的数组，其异或结果一定不为0。偶数长度就不一定啦。
+ * 结论：（error）奇数长度的数组，其异或结果一定不为0。偶数长度就不一定啦。
+ * 因此当数组的长度是偶数时，总能找到一个数字，在擦掉这个数字之后剩余的所有数字异或结果不等于0
  *
  * @author <a href="mailto:clorisforcoding@gmail.com">Jacky Fang</a>
  */
