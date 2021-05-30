@@ -1,6 +1,8 @@
 package cn.teamwang.algorithm.daily.leetcode;
 
 /**
+ * 231. 2 的幂
+ *
  * @author <a href="mailto:clorisforcoding@gmail.com">Jacky Fang</a>
  */
 public class IsPowerOfTwo {
