@@ -1,13 +1,9 @@
 package cn.teamwang.algorithm.contest.no3;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
 
 /**
- * todo
+ * todo 困难dp 1879. 两个数组最小的异或值之和
  *
  * @author <a href="mailto:clorisforcoding@gmail.com">Jacky Fang</a>
  */

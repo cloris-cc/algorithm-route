@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * 1878. 矩阵中最大的三个菱形和
+ *
  * @author <a href="mailto:clorisforcoding@gmail.com">Jacky Fang</a>
  */
 public class GetBiggestThree {
