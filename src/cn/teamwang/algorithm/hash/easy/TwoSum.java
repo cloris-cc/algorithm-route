@@ -1,4 +1,4 @@
-package cn.teamwang.algorithm.hash;
+package cn.teamwang.algorithm.hash.easy;
 
 import java.util.Arrays;
 import java.util.HashMap;

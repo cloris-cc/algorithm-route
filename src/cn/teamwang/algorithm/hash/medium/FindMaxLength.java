@@ -1,10 +1,12 @@
-package cn.teamwang.algorithm.hash;
+package cn.teamwang.algorithm.hash.medium;
 
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * 525. 连续数组
+ *
  * @author <a href="mailto:clorisforcoding@gmail.com">Jacky Fang</a>
  */
 public class FindMaxLength {
@@ -36,9 +38,6 @@ public class FindMaxLength {
             sum += nums[i];
             if (sum == 0) {
                 maxLen = Math.max(maxLen, i + 1);
-            }
-            if (sum==-2) {
-                System.out.println(i);
             }
             if (map.containsKey(sum)) {
                 maxLen = Math.max(maxLen, i - map.get(sum));

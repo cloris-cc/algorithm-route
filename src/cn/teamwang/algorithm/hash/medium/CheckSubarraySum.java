@@ -1,9 +1,11 @@
-package cn.teamwang.algorithm.hash;
+package cn.teamwang.algorithm.hash.medium;
 
 import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * 523. 连续的子数组和
+ *
  * @author <a href="mailto:clorisforcoding@gmail.com">Jacky Fang</a>
  */
 public class CheckSubarraySum {
