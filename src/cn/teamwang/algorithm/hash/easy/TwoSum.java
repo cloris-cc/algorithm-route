@@ -64,7 +64,7 @@ public class TwoSum {
     }
 
     /**
-     * 哈希表O(n)
+     * 哈希表O(nlogn)
      */
     public static int[] twoSum2(int[] numbers, int target) {
         int[] res = new int[2];
