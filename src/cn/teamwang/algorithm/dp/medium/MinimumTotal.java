@@ -43,14 +43,14 @@ public class MinimumTotal {
         for (int i = 1; i < triangle.size(); i++) {
             // 初始化最左侧
             dp[i][0] += dp[i - 1][0] + triangle.get(i).get(0);
-            // j<i, 相当于 表达式对最右侧不成立。
+            // j<i, 相当于 表达式对最右侧不成立
             for (int j = 1; j < i; j++) {
                 dp[i][j] = Math.min(dp[i - 1][j], dp[i - 1][j - 1]) + triangle.get(i).get(j);
             }
             // 初始化最右侧
             dp[i][i] = dp[i - 1][i - 1] + triangle.get(i).get(i);
         }
-        // 取最后一行的最小值
+        // min最后一行
         for (int j = 0; j < m; j++) {
             res = Math.min(res, dp[m - 1][j]);
         }
