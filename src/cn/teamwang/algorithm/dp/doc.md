@@ -32,6 +32,7 @@ https://baike.baidu.com/item/状态转移方程/7359039?fr=aladdin
 > 考虑到状态转移方程只和i-1(即上一行)有关，故可以省略（因为1是常数，当同时出现i-1,i+1或i-j时，则不能省略）。
 > 状态转移方程的不一定是从上一个状态(i-1)转移来的。
 > dp[i] = max(dp[j]) + 1 = max(dp[i], dp[j] + 1), j < i。并且因为方程用到了min/max + dp[i]自身，所以要对dp[i]赋值(不可能到达最大或最小值)
+> **跳过初始化**：开辟+1的空间。[RobII](./medium/RobII.java) [MaxValue](./medium/MaxValue.java)
 
 
 1. [最长公共子序列](./LongestCommonSubsequence.java)
