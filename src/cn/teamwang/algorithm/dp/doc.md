@@ -38,3 +38,8 @@ https://baike.baidu.com/item/状态转移方程/7359039?fr=aladdin
 1. [最长公共子序列](./LongestCommonSubsequence.java)
 2. [剪绳子I](./CuttingRope.java)
 3. [找出第 K 大的异或坐标值](../daily/leetcode/KthLargestValue.java) & [最小的路径和](../daily/nowcoder/MinPathSum.java)
+
+## 背包问题
+
+0-1背包：[零钱兑换](./medium/CoinChange.java): 先遍历金额。状态转移方程 dp[i] = min(dp[i-coins[x]]) + 1 = min(dp[i], dp[i-coins[x]]+1) // 因为是最少硬币个数，所以用一个最大面值的硬币来凑
+完全背包：[硬币](./medium/WaysToChange.java): 先遍历硬币面值。状态转移方程 dp[i] = dp[i] + dp[i-coins[x]]

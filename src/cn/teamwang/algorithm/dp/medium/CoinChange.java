@@ -16,7 +16,7 @@ public class CoinChange {
     /**
      * 最优解又是动态规划了。
      * dp[i] 表示  凑成金额i的最少硬币个数。
-     * dp[i] = min(dp[i-coins[x]]) + 1
+     * dp[i] = min(dp[i-coins[x]]) + 1 // 因为是最少硬币个数，所以用一个最大面值的硬币来凑
      * = min(dp[i], dp[i-coins[x] + 1)
      * 注意：因为方程内用到了dp[i]自己，所以要有合理初始值。
      * dp[0] = 0
