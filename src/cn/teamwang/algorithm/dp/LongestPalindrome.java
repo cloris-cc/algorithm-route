@@ -40,10 +40,10 @@ public class LongestPalindrome {
     }
 
     /**
-     * dp[i][j] 表示 s[i:j] 是否是回文串。j>=i
+     * dp[i][j] 表示 s[i:j] 是否是回文串。i<=j
      * 初始值：i=j
      * 状态转移方程：dp[i][j]=dp[i+1][j-1] & s.chatAt(i)==s.charAt(j)
-     *
+     * abcba
      * 出现了i+1，所以按顺序正常循环是不知道dp[i+1]的结果的。该题可以把j作为第一层循环，就可以知道dp[i+1][j-1]中j-1的i+1了
      */
     public static String longestPalindrome2(String s) {
