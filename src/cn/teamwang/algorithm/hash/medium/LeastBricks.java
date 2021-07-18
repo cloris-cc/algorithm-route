@@ -1,6 +1,5 @@
-package cn.teamwang.algorithm.daily.leetcode;
+package cn.teamwang.algorithm.hash.medium;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
