@@ -18,7 +18,24 @@ public class Order {
             preorder(root.left);
             preorder(root.right);
         }
+    }
 
+    /**
+     * stack
+     */
+    public void preorder2(TreeNode root) {
+        Stack<TreeNode> s = new Stack<>();
+        s.push(root);
+        while (!s.isEmpty()) {
+            TreeNode node = s.pop();
+            System.out.println(node.val);
+            if (node.right != null) {
+                s.push(node.right);
+            }
+            if (node.left != null) {
+                s.push(node.left);
+            }
+        }
     }
 
     /**
@@ -88,7 +105,7 @@ public class Order {
 
     /**
      * DFS: 直到 null 停止
-     *
+     * <p>
      * 树3种遍历的基础算法：
      * Depth First Search，深度优先搜索
      * 可以用来搜索叶子节点(即没有左右节点的节点)
