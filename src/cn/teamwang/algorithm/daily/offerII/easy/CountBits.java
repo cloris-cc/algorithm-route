@@ -21,9 +21,12 @@ public class CountBits {
 
         for (int num = 0; num <= n; num++) {
             int count = 0;
+/*
             for (int i = 0; i < 31; i++) {
                 count += (num >> i) & 1;
             }
+*/
+            count = Integer.bitCount(num);
             res[num] = count;
         }
         return res;
