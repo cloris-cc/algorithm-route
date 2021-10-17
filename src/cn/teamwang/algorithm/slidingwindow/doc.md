@@ -5,3 +5,11 @@
 滑动窗口的规则：
 1. **同一时刻，只能(向右)滑动 L 或 R**。即滑动右边界的时候左边界固定。
 2. L,R 只能向右滑动。
+   
+**通常情况下，r++位于最外层，l++位于内部循环。**
+
+eg: 
+
+[和大于等于 target 的最短子数组](../daily/offerII/medium/MinSubArrayLen.java)
+
+[乘积小于 K 的子数组](../daily/offerII/medium/NumSubarrayProductLessThanK.java)
