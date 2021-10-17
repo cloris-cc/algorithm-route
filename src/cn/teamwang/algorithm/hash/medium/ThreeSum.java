@@ -28,7 +28,7 @@ public class ThreeSum {
     }
 
     /**
-     * 哈希表 O(n^3)
+     * 哈希表 O(n^2 * logn)超时
      */
     public static List<List<Integer>> threeSum1(int[] nums) {
         List<List<Integer>> res = new ArrayList<>();
