@@ -1,5 +1,8 @@
 package cn.teamwang.algorithm.doublepointer;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * 142. 环形链表 II
  *
@@ -17,10 +20,12 @@ public class DetectCycle {
         node3.next = node4;
         node4.next = node2;
 
-//        System.out.println(detectCycle(node1));
+        System.out.println(detectCycle(node1).val);
+        System.out.println(detectCycle1(node1).val);
 
         ListNode n1 = new ListNode(1);
         System.out.println(detectCycle(n1));
+        System.out.println(detectCycle1(n1));
     }
 
     public static ListNode detectCycle(ListNode head) {
@@ -43,6 +48,23 @@ public class DetectCycle {
             }
         }
         return res;
+    }
+
+    public static ListNode detectCycle1(ListNode head) {
+        if (head == null) {
+            return null;
+        }
+        Set<ListNode> set = new HashSet<>();
+
+        while (head.next != null) {
+            if (set.contains(head)) {
+                return head;
+            } else {
+                set.add(head);
+            }
+            head = head.next;
+        }
+        return null;
     }
 
     static class ListNode {

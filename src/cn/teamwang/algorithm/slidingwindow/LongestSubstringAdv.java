@@ -98,7 +98,7 @@ public class LongestSubstringAdv {
     }
 
     /**
-     * 分治算法(递归)
+     * todo: rewrite 分治算法(递归)
      */
     public static int longestSubstring3(String s, int k) {
         // 1. 递归终止条件

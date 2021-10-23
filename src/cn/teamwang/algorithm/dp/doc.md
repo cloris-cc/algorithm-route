@@ -24,14 +24,21 @@ https://baike.baidu.com/item/状态转移方程/7359039?fr=aladdin
 ## 典型例题
 
 > DP解题思路：
+> 
 > Step 1: 确定dp是几维数组。通过题目中可遍历的东西来看。dp[i][j]为...的ans/res(此处不是/不一定那个最优解)。
+>  
 > Step 2: 求初始值。从i=0, j=0...入手。
+> 
 > Step 3: 求状态转移方程。找到一个可转移过来的状态。可先从i-1, j-1, j(j<i)...入手，不行再用变量替代(例如，当dp[i]为一维数组，状态转移方程也可以引入变量j)。
 > 
 > 注意：
+>
 > 考虑到状态转移方程只和i-1(即上一行)有关，故可以省略（因为1是常数，当同时出现i-1,i+1或i-j时，则不能省略）。
+> 
 > 状态转移方程的不一定是从上一个状态(i-1)转移来的。
+> 
 > dp[i] = max(dp[j]) + 1 = max(dp[i], dp[j] + 1), j < i。并且因为方程用到了min/max + dp[i]自身，所以要对dp[i]赋值(不可能到达最大或最小值)
+> 
 > **跳过初始化**：开辟+1的空间。[RobII](./medium/RobII.java) [MaxValue](./medium/MaxValue.java)
 
 
@@ -42,4 +49,5 @@ https://baike.baidu.com/item/状态转移方程/7359039?fr=aladdin
 ## 背包问题
 
 0-1背包：[零钱兑换](./medium/CoinChange.java): 先遍历金额。状态转移方程 dp[i] = min(dp[i-coins[x]]) + 1 = min(dp[i], dp[i-coins[x]]+1) // 因为是最少硬币个数，所以用一个最大面值的硬币来凑
+
 完全背包：[硬币](./medium/WaysToChange.java): 先遍历硬币面值。状态转移方程 dp[i] = dp[i] + dp[i-coins[x]]
