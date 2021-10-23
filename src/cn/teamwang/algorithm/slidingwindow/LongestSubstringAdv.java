@@ -1,5 +1,6 @@
 package cn.teamwang.algorithm.slidingwindow;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -10,9 +11,11 @@ import java.util.Map;
  */
 public class LongestSubstringAdv {
     public static void main(String[] args) {
-        System.out.println(longestSubstring3("aaabb", 3));
-        System.out.println(longestSubstring3("ababbc", 2));
-        System.out.println(longestSubstring3("bbaaacbd", 3));
+//        System.out.println(longestSubstring3("aaabb", 3));
+//        System.out.println(longestSubstring3("ababbc", 2));
+//        System.out.println(longestSubstring3("bbaaacbd", 3));
+        String s1 = "aaabb";
+        System.out.println(Arrays.toString(s1.split("b")));
 
     }
 
@@ -57,15 +60,38 @@ public class LongestSubstringAdv {
      * 想滑但是滑不出来。
      */
     public static int longestSubstring2(String s, int k) {
-        if (s.length() == 1) {
-            return 1;
-        }
-        int maxLen = 1, l = 0, r = -1;
-        int[] freq = new int[256];
+        int maxLen = 0;
+        int n = s.length();
+        for (int t = 1; t <= 26; t++) {
+            int l = 0, r = 0;
+            int[] freq = new int[26];
+            int tot = 0;
+            int less = 0;
+            while (r < n) {
+                freq[s.charAt(r) - 'a']++;
+                if (freq[s.charAt(r) - 'a'] == 1) {
+                    tot++;
+                    less++;
+                }
+                if (freq[s.charAt(r) - 'a'] == k) {
+                    less--;
+                }
 
-        while (l < s.length() - 1 && r < s.length() - 1) {
-            // 右边界滑动：次数满足条件
-            if (freq[s.charAt(r + 1)] < k) {
+                while (tot > t) {
+                    freq[s.charAt(l) - 'a']--;
+                    if (freq[s.charAt(l) - 'a'] == k - 1) {
+                        less++;
+                    }
+                    if (freq[s.charAt(l) - 'a'] == 0) {
+                        tot--;
+                        less--;
+                    }
+                    l++;
+                }
+                if (less == 0) {
+                    maxLen = Math.max(maxLen, r - l + 1);
+                }
+                r++;
             }
         }
         return maxLen;
@@ -82,12 +108,7 @@ public class LongestSubstringAdv {
         // 统计每个字符出现的次数
         Map<Character, Integer> map = new HashMap<>();
         for (int i = 0; i < s.toCharArray().length; i++) {
-            if (map.containsKey(s.charAt(i))) {
-                // 次数加一
-                map.put(s.charAt(i), map.get(s.charAt(i)) + 1);
-            } else {
-                map.put(s.charAt(i), 1);
-            }
+            map.put(s.charAt(i), map.getOrDefault(s.charAt(i), 0) + 1);
         }
 
         for (char c : map.keySet()) {
