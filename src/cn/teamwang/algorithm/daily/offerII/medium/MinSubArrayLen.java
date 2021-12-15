@@ -21,6 +21,9 @@ public class MinSubArrayLen {
 
     }
 
+    /**
+     * O(n^2)
+     */
     public static int minSubArrayLen(int target, int[] nums) {
         int res = Integer.MAX_VALUE;
         for (int i = 0; i < nums.length; i++) {
@@ -36,6 +39,9 @@ public class MinSubArrayLen {
         return res == Integer.MAX_VALUE ? 0 : res;
     }
 
+    /**
+     * sliding window O(n)
+     */
     public static int minSubArrayLen1(int target, int[] nums) {
         int res = Integer.MAX_VALUE;
         int l = 0, r = 0;
@@ -52,5 +58,12 @@ public class MinSubArrayLen {
             r++;
         }
         return res == Integer.MAX_VALUE ? 0 : res;
+    }
+
+    /**
+     * prefix sum
+     */
+    public static int minSubArrayLen2(int target, int[] nums) {
+        return 0;
     }
 }

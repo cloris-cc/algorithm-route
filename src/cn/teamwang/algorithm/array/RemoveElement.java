@@ -1,5 +1,9 @@
 package cn.teamwang.algorithm.array;
 
+import com.sun.tools.javac.util.Assert;
+
+import java.util.Arrays;
+
 /**
  * 27. 移除元素
  *
@@ -9,7 +13,6 @@ public class RemoveElement {
     public static void main(String[] args) {
         int[] nums1 = {3, 2, 2, 3};
         int[] nums2 = {0, 1, 2, 2, 3, 0, 4, 2};
-
         System.out.println(removeElement(nums1, 3));
         System.out.println(removeElement(nums2, 2));
     }
@@ -27,6 +30,8 @@ public class RemoveElement {
                 len++;
             }
         }
+        int[][] matrix = new int[5][5];
+        Arrays.toString(matrix);
         return len;
     }
 }
