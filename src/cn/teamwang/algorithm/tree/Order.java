@@ -3,7 +3,7 @@ package cn.teamwang.algorithm.tree;
 import java.util.*;
 
 /**
- * 3 种遍历
+ * DFS ：3 种遍历
  *
  * @author <a href="mailto:clorisforcoding@gmail.com">Jacky Fang</a>
  */
